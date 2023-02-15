@@ -193,33 +193,34 @@ dim(libReturn$results)
     d.  Utiliza la función **summary**, sobre **cabbages** y **Chile** y observa como, además de otros estadísticos, también devuelve el número de valores perdidos de cada variable.
 
 ```{r}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#a.
+library(MASS)
+dim(cabbages)
+str(cabbages)
+head(cabbages)
+tail(cabbages)
+summary(cabbages)
+```
+```{r}
+#b
+x<-anyNA(cabbages, recursive = FALSE)
+x
+```
+```{r}
+#c
+library(car)
+dim(Chile)
+str(Chile)
+head(Chile)
+tail(Chile)
+summary(Chile)
+y<-anyNA(Chile, recursive = FALSE)
+y
+```
+```{r}
+#d
+summary(cabbages)
+summary(Chile)
 ```
 
 5.  Muchas pruebas estadísticas suponen que los datos siguen una distribución Gaussiana. Utiliza la aproximación visual proporcionada por **qqPlot** para determinar si podemos asumir que las variables **HeadWt** y **VitC** del conjunto **cabbages** verifican esta condición.
