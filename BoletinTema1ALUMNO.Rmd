@@ -171,15 +171,17 @@ Si las dos graficas presentan el mismo comportamiento y diremos que ninguna de e
     c.  Determina el número de librerías que tienes instaladas.
 
     ```{r}
+#a.
+libReturn<-library()
 
-
-
-
-
-
-
-
-
+#Su estrutura es una lista formada por 3 elementos
+elem<-head(libReturn$results, n=5)
+elem
+#En elem se muestran los 5 primeros elementos de la matriz 
+#c
+dim(libReturn$results)
+#sabiendo la dimension, sabemos que tiene 188 columanas y 3 filas como la primera col se corresponde con el nombre de la s librias
+#diremos que hay 188 librerias intaladas
 
     ```
 
