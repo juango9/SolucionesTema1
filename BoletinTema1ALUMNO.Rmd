@@ -91,43 +91,51 @@ a.  Mira la las características de ambos conjuntos usando la ayuda.
 b.  Usa las funciones **dim, head, tail, str** para una primera visión de los conjuntos de datos.
 c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
 
+
 ```{r}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#b
+#La previsualizacion del conjunto de datos mammals con la libreria MASS
+library(MASS)
+dim(mammals)
+str(mammals)
+head(mammals)
+tail(mammals)
+#c
+rownames(mammals)
+colnames(mammals)
+```
+```{r}
+#La previsualizacion del conjunto de datos Animals2 con la libreria robustbase
+library(robustbase)
+dim(Animals2)
+str(Animals2)
+head(Animals2)
+tail(Animals2)
+#c
+rownames(Animals2)
+colnames(Animals2)
 ```
 
 d.  Usa la función **intersect** y almacena en la variable *commonAnimals* los aminales que aparezcan en ambos conjuntos
 
 ```{r}
 
-
-
-
-
-
+commonAnimals<-(intersect(rownames(mammals),rownames(Animals2)))
+commonAnimals
 ```
 
 e.  Usa **setdiff** para averiguar qué animales no están en ambos conjuntos. ¿Cuántos son ?. ¿Qué tipo de animales son?
 
 ```{r}
-
-
-
+#Estos son los animales de mammals que no estan en Animals2
+diferentAnimals1<-(setdiff(rownames(mammals),rownames(Animals2)))
+diferentAnimals1
+#Aqui hay 4 diferentes
+#Estos son los animales de Animals2 que no estan en mammals
+diferentAnimals2<-(setdiff(rownames(Animals2),rownames(mammals)))
+diferentAnimals2
+#Aqui hay 7 diferentes
+#Hay un total de 11 animales diferentes
 
 
 
@@ -137,23 +145,15 @@ e.  Determina las diferencia entre los animales que no aparecen en ambos conjunt
 
 ```{r}
 
-
-
-
-
-
-
-
-
-
-
-
 ```
 
 2.  La funcion **qqPlot** del paquete **car** puede ser utilizada para determinar gráficamente si una serie de puntos siguen una distribución de datos Gaussiana. Si las muestras están dentro de las líneas discontinuas podemos indicar que siguen una distribución Gaussiana con un 95 % de confianza. Utilizando esta función representa el logaritmo neperiano (**log**) del peso del cerebro (**brain weigths**) del registro de datos **mammals** del paquete **MASS** y conjunto de datos **Animals2** de la librería **robustbase**. ¿Presentan el mismo comportamiento ?.¿Podríamos decir que siguen una distribución Gaussiana ?
 
 ```{r}
 
+```
+
+```{r}
 
 ```
 
