@@ -91,7 +91,6 @@ a.  Mira la las características de ambos conjuntos usando la ayuda.
 b.  Usa las funciones **dim, head, tail, str** para una primera visión de los conjuntos de datos.
 c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
 
-
 ```{r}
 #b
 #La previsualizacion del conjunto de datos mammals con la libreria MASS
@@ -104,6 +103,7 @@ tail(mammals)
 rownames(mammals)
 colnames(mammals)
 ```
+
 ```{r}
 #La previsualizacion del conjunto de datos Animals2 con la libreria robustbase
 library(robustbase)
@@ -161,8 +161,8 @@ CerebroMammals
 CerebroAnimals<-qqPlot(log(Animals2$brain))
 CerebroAnimals
 ```
-Si las dos graficas presentan el mismo comportamiento y diremos que ninguna de ellas es similar a una distribucion Gaussiana puesto que esta es en forma de campana y las graficas representadas no.
 
+Si las dos graficas presentan el mismo comportamiento y diremos que ninguna de ellas es similar a una distribucion Gaussiana puesto que esta es en forma de campana y las graficas representadas no.
 
 3.  La función **library** sin argumentos abre una ventana y muestra las librerías que han sido instaladas.
 
@@ -171,17 +171,17 @@ Si las dos graficas presentan el mismo comportamiento y diremos que ninguna de e
     c.  Determina el número de librerías que tienes instaladas.
 
     ```{r}
-#a.
-libReturn<-library()
+    #a.
+    libReturn<-library()
 
-#Su estrutura es una lista formada por 3 elementos
-elem<-head(libReturn$results, n=5)
-elem
-#En elem se muestran los 5 primeros elementos de la matriz 
-#c
-dim(libReturn$results)
-#sabiendo la dimension, sabemos que tiene 188 columanas y 3 filas como la primera col se corresponde con el nombre de la s librias
-#diremos que hay 188 librerias intaladas
+    #Su estrutura es una lista formada por 3 elementos
+    elem<-head(libReturn$results, n=5)
+    elem
+    #En elem se muestran los 5 primeros elementos de la matriz 
+    #c
+    dim(libReturn$results)
+    #sabiendo la dimension, sabemos que tiene 188 columanas y 3 filas como la primera col se corresponde con el nombre de la s librias
+    #diremos que hay 188 librerias intaladas
 
     ```
 
@@ -201,11 +201,13 @@ head(cabbages)
 tail(cabbages)
 summary(cabbages)
 ```
+
 ```{r}
 #b
 x<-anyNA(cabbages, recursive = FALSE)
 x
 ```
+
 ```{r}
 #c
 library(car)
@@ -217,6 +219,7 @@ summary(Chile)
 y<-anyNA(Chile, recursive = FALSE)
 y
 ```
+
 ```{r}
 #d
 summary(cabbages)
@@ -237,6 +240,7 @@ hist(cabbages$VitC)
 
 
 ```
+
 ```{r}
 
 hist(as.numeric(cabbages$Cult))
@@ -248,7 +252,7 @@ hist(as.numeric(cabbages$Cult))
 #Diagrama de dispersión global.
 plot(whiteside$Temp, whiteside$Gas)
 #Diagrama de dispersión etiquetando según un factor.
-plot(whiteside$Temp, whiteside$Gas, pch=c(6,16)[whiteside\$Insul])
+plot(whiteside$Temp, whiteside$Gas, pch=c(6,16)[whiteside$Insul])
 legend(x="topright",legend=c("Insul = Before","Insul = After"), pch=c(6,16))
 # Planteamos 2 modelos lineales, uno para los datos de cada factor
 Model1 <- lm(Gas ~ Temp, data = whiteside, subset = which(Insul == "Before"))
@@ -258,29 +262,15 @@ abline(Model1, lty=2)
 abline(Model2)
 ```
 
-```{r,echo=T,include=T,eval=F}
-
-
-
-
-
-
-
-
-
-
-
-
-```
-
 a.  Utiliza un procedimiento análogo para determinar si se aprecia una relación lineal entre los niveles de vitamina C, **VitC** en función del peso de la calabaza, **HeadWt**, en el conjunto de datos **cabbages**.
 b.  Repite el apartado anterior, pero obteniendo un modelo para cada una de las dos variedades de calabaza, **Cult**. Ver[Parámetros básicos plot](https://www.statmethods.net/advgraphs/parameters.html).
 
 ```{r}
 
+plot(cabbages$VitC, cabbages$HeadWt)
 
-
-
+plot(cabbages$VitC, cabbages$HeadWt, pch=c(6,16)[cabbages$HeadWt])
+legend(x="topright",legend=c("Insul = Before","Insul = After"), pch=c(6,16))
 
 
 
